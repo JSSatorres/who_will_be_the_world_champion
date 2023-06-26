@@ -6,7 +6,8 @@ web = 'https://en.wikipedia.org/wiki/2014_FIFA_World_Cup'
 
 response = requests.get(web)
 
-response.text
+content = response.text
+BeautifulSoup(content, 'lxml')
 
 
 
