@@ -20,8 +20,13 @@ for match in matches:
     # print(match)
     team_links = match.select('tr:nth-child(1) > td:nth-child(2) > a[title^="Selección de fútbol de"]')
     team_names = [link.text for link in team_links]
+    print(team_names)
     game = '-'.join(team_names)
+    print(game)
+    print('------------------')
     games.append(game)
+    print(games)
+    print('-------XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-----------')
     # games += [(game)]
     
     # score_cells = match.select('td[align="right"] > div > b')
