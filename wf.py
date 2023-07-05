@@ -15,30 +15,17 @@ matches = soup.find_all('table', class_='collapsible autocollapse vevent plainli
 
 games = []
 
-# for match in matches:
-#     # match.select('tr:nth-child(1) > td:nth-child(2) > a')
-#     # print(match)
-#     team_links = match.select('tr:nth-child(1) > td:nth-child(2) > a[title^="Selección de fútbol de"]')
-#     team_names = [link.text for link in team_links]
-#     print(team_names)
-#     game = '-'.join(team_names)
-#     print(game)
-#     print('------------------')
-#     games.append(game)
-#     print(games)
-
-#     print('-------XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-----------')
-for i in range(0, len(matches), 2):
-    match1 = matches[i]
-    match2 = matches[i+1]
-
-    team_links1 = match1.select('tr:nth-child(1) > td:nth-child(2) > a[title^="Selección de fútbol de"]')
-    team_names1 = [link.text for link in team_links1]
-
-    team_links2 = match2.select('tr:nth-child(1) > td:nth-child(2) > a[title^="Selección de fútbol de"]')
-    team_names2 = [link.text for link in team_links2]
-
-    game = f"{team_names1[0]}-{team_names2[0]}"
+for match in matches:
+    local_team = match.select('tr:nth-child(1) > td:nth-child(2) > a[title^="Selección de fútbol de"]')
+    local_team_text = local_team[0].text if local_team else ""
+    
+    score = match.select('tr:nth-child(1) > td:nth-child(3) > div > b')
+    score_text = score[0].text if score else ""
+    
+    visitor_team = match.select('tr:nth-child(1) > td:nth-child(4) > a[title^="Selección de fútbol de"]')
+    visitor_team_text = visitor_team[0].text if visitor_team else ""
+    
+    game = f"{local_team_text}-{visitor_team_text}-{score_text}"
     games.append(game)
     # games += [(game)]
 print(games)   
