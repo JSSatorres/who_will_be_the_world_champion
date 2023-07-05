@@ -29,16 +29,3 @@ for match in matches:
     games.append(game)
     # games += [(game)]
 print(games)   
-    # score_cells = match.select('td[align="right"] > div > b')
-    # scores = [cell.text for cell in score_cells]
-    
-# print(games)
-
-# print (soup)
-# matches = soup.select("#collapsibleTable0 > tbody > tr:nth-child(1)")
-# for match in matches:
-#     print(match)
-#collapsibleTable0 > tbody > tr:nth-child(1)
-
-
-#collapsibleTable6 > tbody > tr:nth-child(1) > td:nth-child(2) > a
