@@ -1,10 +1,10 @@
 intial = 1930
-finish = 2018
+finish = 2022
 increment = 4
 
-year = []
+years = []
 
 while intial <= finish:
-    year.append(intial)
+    years.append(intial)
     intial += increment
 
