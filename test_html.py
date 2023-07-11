@@ -18,5 +18,5 @@ elemento = soup.select_one('#g_3_WG03yMyc > div.event__participant.event__partic
 # Extraer el contenido del elemento
 contenido = elemento.text.strip()
 
-# Imprimir el contenido
+
 print(contenido)
