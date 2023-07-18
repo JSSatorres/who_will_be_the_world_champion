@@ -23,7 +23,9 @@ En Selenium, las esperas (waits) son utilizadas para sincronizar la interacción
 
 2. Espera implícita (`Implicit Wait`):
    - Se establece un tiempo máximo para esperar que los elementos estén disponibles antes de lanzar una excepción.
-   - Ejemplo: Configurar una espera implícita de 5 segundos. ```python
+   - Ejemplo: Configurar una espera implícita de 5 segundos. 
+
+   ```python
      driver.implicitly_wait(5)  # Esperar hasta 5 segundos
 
      # Realizar acciones sobre los elementos de la página
@@ -31,7 +33,9 @@ En Selenium, las esperas (waits) son utilizadas para sincronizar la interacción
 
 3. Espera de tiempo de carga de página (`Page Load Wait`):
    - Se espera a que la página se cargue completamente antes de continuar con las siguientes acciones.
-   - Ejemplo: Esperar hasta que la página se cargue completamente. ```python
+   - Ejemplo: Esperar hasta que la página se cargue completamente. 
+   
+   ```python
      driver.set_page_load_timeout(10)  # Esperar hasta 10 segundos para que se cargue la página
 
      # Realizar acciones después de que la página se haya cargado completamente
