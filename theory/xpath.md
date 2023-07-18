@@ -5,7 +5,7 @@
 
     ```xpath
      //div
-     ``` 
+    ``` 
      seleccionará todos los elementos `div` en el documento.
 
 2. Selector de atributo:
@@ -13,7 +13,7 @@
 
    ```xpath
      //input[@type="text"]
-  ``` 
+   ``` 
      seleccionará todos los elementos `input` con el atributo `type` establecido en "text".
 
 3. Selector de posición:
@@ -54,7 +54,7 @@
 
     ```xpath
      //div/span
-     ``` 
+    ``` 
 
      seleccionará todos los elementos `span` que están dentro de un elemento `div`, en cualquier nivel de profundidad.
 
