@@ -21,10 +21,10 @@ driver.get(web)
 carricoches_bebe = driver.find_elements(by='xpath',value='//*[@id="647203475"]')
 print(carricoches_bebe)
 
-# for coche in carricoches_bebe:    
-#   title = coche.find_element_by_xpath('.//*[@id="515250869"]/a/div/div/div[2]/div[1]/h6')
-#   # title = coche.find_element_by_xpath('.//*[@id="515250869"]/a/div/div/div[2]/div[1]/h6')
-#   print(title)  
+for coche in carricoches_bebe:    
+  title = coche.find_element_by_xpath('.//*[@id="515250869"]/a/div/div/div[2]/div[1]/h6')
+  # title = coche.find_element_by_xpath('.//*[@id="515250869"]/a/div/div/div[2]/div[1]/h6')
+  print(title)  
 
 input("Presiona una tecla para cerrar el navegador...")
 
