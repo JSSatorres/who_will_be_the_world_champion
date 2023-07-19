@@ -19,15 +19,15 @@ web = 'https://as.com//'
 driver.get(web)
 
 # todos los elementos
-article = driver.find_elements(by='xpath',value="//article[contains(@class, 's s--h')]")
-print(article)
+articles = driver.find_elements(by='xpath',value="//article[contains(@class, 's s--h')]")
+# print(article)
 
-# for coche in article:    
-#   title = coche.find_elements(by='xpath',value='///a/div/div/div[2]/div[1]/h6')
-#   # title = coche.find_element_by_xpath('.//*[@id="515250869"]/a/div/div/div[2]/div[1]/h6')
-#   print(title)  
+for article in articles:    
+  title = article.find_element(by='xpath',value='.//a').text
+  # title = coche.find_element_by_xpath('.//*[@id="515250869"]/a/div/div/div[2]/div[1]/h6')
+  print(title)  
 
-# input("Presiona una tecla para cerrar el navegador...")
+input("Presiona una tecla para cerrar el navegador...")
 
 # Cerrar el navegador
-# driver.quit()
+driver.quit()
