@@ -67,3 +67,20 @@
      seleccionará el elemento `div` que es hijo directo del elemento `body`, que a su vez es hijo directo del elemento `html`.
 
 Estos son solo algunos ejemplos básicos de cómo actuar con XPath y utilizar diferentes selectores, operadores y rutas. Puedes combinarlos y ajustarlos según tus necesidades para seleccionar elementos específicos en documentos HTML o XML.
+
+Xpath	Query
+//a/@href	Enlaces de un site
+//a/text()	Anchor de los enlaces
+//title	Title
+//h1	H1
+//h2	H2
+//h3	H3
+//link/@href	Link Canonical
+//meta/@content	Meta description
+//meta/@content	Meta robots
+//img/@src	URL de las imágenes
+//img/@alt	Alt de las imágenes
+//a/@href	Google xpath query
+//div/a/@href	Enlaces de todas las entradas de Google
+//link/@hreflang	Hreflang
+//link/@href	Enlace AMP
