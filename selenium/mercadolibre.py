@@ -23,9 +23,10 @@ from webdriver_manager.chrome import ChromeDriverManager
 opts = Options()
 opts.add_argument(
     "user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36")
-driver = webdriver.Chrome(service=Service(
-    ChromeDriverManager().install()), options=opts)
-
+driver = webdriver.Chrome(
+    service=Service('./chromedriver.exe'),
+    options=opts
+)
 # URL SEMILLA
 driver.get('https://listado.mercadolibre.com.ec/herramientas-vehiculos/')
 
