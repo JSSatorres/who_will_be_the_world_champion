@@ -22,3 +22,6 @@ sleep(3)
 titles = driver.find_elements(By.XPATH,'//div[@data-testid="listing-card-title"]')
 for title in titles:
 	print(title.text)
+
+
+  
