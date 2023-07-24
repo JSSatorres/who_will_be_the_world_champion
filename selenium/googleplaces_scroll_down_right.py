@@ -72,6 +72,8 @@ for review in restaurantsReviews:
     userLink.click() # Damos click en el nombre de display del usuario para abrir su perfil. Esto se abre en un nuevo tab.
 
     # Movemos el contexto del driver al tab en la segunda posicion. Si no hacemos esto, no podremos acceder a los elementos del nuevo tab.
+    
+    # esto es para cambiar de pestaña, lista de pestañas me veo a la posicion 1 "driver.window_handles[1]""
     driver.switch_to.window(driver.window_handles[1])
 
     # Damos click en el tab de opiniones del usuario, no sin antes esperar que este disponible
