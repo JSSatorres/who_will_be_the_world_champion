@@ -21,19 +21,22 @@ driver = webdriver.Chrome(
 	options=opts
 )
 
-web = 'https://www.livescore.in/es/partido/v35dSz8d/#/resumen-del-partido/punto-a-punto/0'
-driver.get(web)
+for i in range(4):
+  web = f'https://www.livescore.in/es/partido/v35dSz8d/#/resumen-del-partido/punto-a-punto/{i}'
+  driver.get(web)
 
-# opts.add_argument("--headless") #ocultar el navegador
+  # opts.add_argument("--headless") #ocultar el navegador
 
-# Me doy cuenta que la pagina carga el formulario dinamicamente luego de que la carga incial ha sido completada
-# Por eso tengo que esperar que aparezca 
-input_user = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//div[@class='matchHistoryRowWrapper']")))
+  # Me doy cuenta que la pagina carga el formulario dinamicamente luego de que la carga incial ha sido completada
+  # Por eso tengo que esperar que aparezca 
+  input_user = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//div[@class='matchHistoryRowWrapper']")))
 
 
-# Espero a que aparezcan los resultados
-scores = WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.XPATH, '//div[@class="matchHistoryRow__scoreBox "]')))
+  # Espero a que aparezcan los resultados
+  scores = WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.XPATH, '//div[@class="matchHistoryRow__scoreBox "]')))
 
-# Imprimo el texto de los resultados
-for score in scores:
-  print(score.text)
+  # Imprimo el texto de los resultados
+  for score in scores:
+    print(score.text)
+
+driver.quit()
