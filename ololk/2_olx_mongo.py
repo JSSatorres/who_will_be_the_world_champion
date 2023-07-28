@@ -14,6 +14,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 from pymongo import MongoClient # pip install pymongo
 
+#data para mongo
 client = MongoClient('localhost')
 db = client['olx']
 col = db['anuncios_selenium']
@@ -46,3 +47,26 @@ for i in range(3): # Voy a darle click en cargar mas 3 veces
         print (e)
         # si hay algun error, rompo el lazo. No me complico.
         break
+
+driver.execute_script("window.scrollTo({top: 0, behavior: 'smooth'});")
+sleep(5)
+driver.execute_script("window.scrollTo({top: 20000, behavior: 'smooth'});")
+sleep(5)
+# Encuentro cual es el XPATH de cada elemento donde esta la informacion que quiero extraer
+# Esto es una LISTA. Por eso el metodo esta en plural
+autos = driver.find_elements('xpath', '//li[@data-aut-id="itemBox"]')
+
+# Recorro cada uno de los anuncios que he encontrado
+for auto in autos:
+    # Por cada anuncio hallo el precio, que en esta pagina principal, a veces suele no estar
+    try:
+      precio = auto.find_element('xpath', './/span[@data-aut-id="itemPrice"]').text
+    except:
+      precio = 'NO DISPONIBLE'
+    # Por cada anuncio hallo la descripcion
+    descripcion = auto.find_element('xpath', './/span[@data-aut-id="itemTitle"]').text
+
+    col.insert_one({
+        'precio': precio,
+        'descripcion': descripcion
+    })
