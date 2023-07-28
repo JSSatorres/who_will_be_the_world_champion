@@ -14,7 +14,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 from pymongo import MongoClient # pip install pymongo
 
-#data para mongo
+#data para mongo al guardar
 client = MongoClient('localhost')
 db = client['olx']
 col = db['anuncios_selenium']
