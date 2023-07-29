@@ -74,3 +74,26 @@ from selenium.webdriver.support import expected_conditions as EC
 WebDriverWait(driver, 10).until(EC.title_contains("Selenium"))
 ```
 
+## EC.element_to_be_selected(element)
+
+Espera a que el elemento especificado esté seleccionado (por ejemplo, un elemento <input> de tipo checkbox o radio).
+
+```python
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+checkbox = driver.find_element(By.ID, "mi-checkbox")
+WebDriverWait(driver, 10).until(EC.element_to_be_selected(checkbox))
+```
+
+## EC.alert_is_present()
+
+Espera a que aparezca una alerta (cuadro de diálogo) en la página.
+
+```python
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+WebDriverWait(driver, 10).until(EC.alert_is_present())
+```
