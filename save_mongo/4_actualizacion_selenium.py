@@ -11,7 +11,8 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
-from pymongo import MongoClient # pip install pymongo
+from pymongo import MongoClient
+# pip install pymongo
 client = MongoClient('localhost')
 db = client['weather']
 col = db['clima']
