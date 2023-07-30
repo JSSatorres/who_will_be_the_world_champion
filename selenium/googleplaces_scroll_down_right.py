@@ -78,10 +78,10 @@ for review in restaurantsReviews:
 
     # Damos click en el tab de opiniones del usuario, no sin antes esperar que este disponible
     # ACTUALIZACION> YA NO ES NECESARIO PROQUE POR DEFECTO YA ESTAREMOS AQUI
-    opiniones_tab = WebDriverWait(driver, 10).until(
-      EC.presence_of_element_located((By.XPATH, '//button[@class="section-tab-bar-tab ripple-container section-tab-bar-tab-unselected"]'))
-    )
-    opiniones_tab.click()
+    # opiniones_tab = WebDriverWait(driver, 10).until(
+    #   EC.presence_of_element_located((By.XPATH, '//button[@class="section-tab-bar-tab ripple-container section-tab-bar-tab-unselected"]'))
+    # )
+    # opiniones_tab.click()
 
     # Logica de Scrolling de las opiniones del usuario
     userReviews = WebDriverWait(driver, 10).until(

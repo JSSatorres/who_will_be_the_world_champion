@@ -58,16 +58,3 @@ autos = driver.find_elements('xpath', '//li[@data-aut-id="itemBox"]')
 
 # Recorro cada uno de los anuncios que he encontrado
 
-for auto in autos:
-    # Por cada anuncio hallo el precio, que en esta pagina principal, a veces suele no estar
-    try:
-      precio = auto.find_element('xpath', './/span[@data-aut-id="itemPrice"]').text
-    except:
-      precio = 'NO DISPONIBLE'
-    # Por cada anuncio hallo la descripcion
-    descripcion = auto.find_element('xpath', './/span[@data-aut-id="itemTitle"]').text
-
-    col.insert_one({
-        'precio': precio,
-        'descripcion': descripcion
-    })

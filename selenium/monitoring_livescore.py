@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC #expected_conditions
+from selenium.webdriver.support import expected_conditions as EC
 
 
 
@@ -21,10 +21,8 @@ web = 'https://www.livescore.in/es/partido/2cp6n8c1/#/resumen-del-partido'
 driver.get(web)
 sleep(3)
 
-wait = WebDriverWait(driver, 3)
-teams = wait.until(EC.presence_of_all_elements_located((By.XPATH, "//a[@class='participant__participantName participant__overflow ']"))) 
 
-# score = wait.until(EC.frame_to_be_available_and_switch_to_it)
+teams = WebDriverWait(driver, 3).until(EC.presence_of_all_elements_located((By.XPATH, "//a[@class='participant__participantName participant__overflow ']"))) 
 
 for team in teams:
   print(team.text)
