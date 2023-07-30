@@ -17,19 +17,20 @@ driver = webdriver.Chrome(
 	service=Service('./chromedriver.exe'),
 	options=opts
 )
-web = 'https://www.livescore.in/es/partido/2cp6n8c1/#/resumen-del-partido'
+web = 'https://www.bet365.es/#/HO/'
+# web2 = 'https://www.bet365.es/#/HO/'
 driver.get(web)
 sleep(3)
 
-wait = WebDriverWait(driver, 3)
-teams = wait.until(EC.presence_of_all_elements_located((By.XPATH, "//a[@class='participant__participantName participant__overflow ']"))) 
+wait = WebDriverWait(driver, 120)
+Odd = wait.until(EC.presence_of_element_located((By.XPATH, '//span[@class="fh-ParticipantFixtureOdd_Odds"]'))) 
 
 # score = wait.until(EC.frame_to_be_available_and_switch_to_it)
 
-for team in teams:
-  print(team.text)
+# for team in teams:
+#   print(team.text)
 
-# print(local_team.text)
+# print(Odd.text)
 # print(visit_team.text)
 # titles = driver.find_elements(By.XPATH,'//div[@data-testid="listing-card-title"]')
 # for title in titles:
