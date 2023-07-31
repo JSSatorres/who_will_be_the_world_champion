@@ -5,12 +5,13 @@ OBJETIVO:
 CREADO POR: LEONARDO KUFFO
 ULTIMA VEZ EDITADO: 9 ENERO 2023
 """
-import schedule
 import time
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
+# instalar estos paquetes
+import schedule
 from pymongo import MongoClient
 # pip install pymongo
 client = MongoClient('localhost')
